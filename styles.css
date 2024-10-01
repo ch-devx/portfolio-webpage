@@ -66,7 +66,7 @@ main{
 	justify-content: space-between;
 	flex-direction: column;
 	margin: auto;
-	gap: 50vh;
+	gap: 38vh;
 	width: clamp(100px, 85vw, 950px);
 }
 .about-me{
@@ -92,6 +92,7 @@ main{
 	box-shadow: 2px 0 4px #DBDBDB39, -2px -5px 4px #F2423622;
 	backdrop-filter: blur(2px);
 	filter: brightness(0.9);
+	display: none;
 }
 .img-container img:hover{
 	box-shadow: 2px 0 4px #DBDBDB39, -2px -5px 4px #F2423633;
@@ -238,7 +239,7 @@ h2{
 	}
 	main{
 		width: clamp(100px, 70vw, 950px);
-		gap: 70vh;
+		gap: 52vh;
 		padding: 5vh 0 10vh 0;
 	}
 	.skill-bar{
