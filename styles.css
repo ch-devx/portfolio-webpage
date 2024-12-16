@@ -24,7 +24,9 @@ body{
 .space{
 	height: 100px;
 } 
-
+ul{
+	list-style: none;
+}
 /*
 NAV
 */
@@ -36,14 +38,13 @@ nav{
 	position: fixed;
 	width: 100vw;
 	z-index: 10;
-	box-shadow: 0 0 10px var(--black);
+	box-shadow: 0 0 20px #000A;
 }
 li a{
 	text-decoration: none;
 	color: #FFF;
 }
 nav li{
-	list-style: none;
 	text-align: center;
 	padding: 5px 10px;
 	border-radius: 12px;
@@ -109,19 +110,17 @@ h1{
 	animation: move-down both 1.2s 0.3s, appear both 1.2s 0.5s;
 }
 h1, h2, .info{
-   filter: drop-shadow(0 0 4px #000);
+   filter: drop-shadow(0 0 4px #0009);
 }
 .info{
 	grid-area: info;
 	font-size: clamp(16px, 3.1vw, 24px);
 	line-height: 1.5;
-	animation: move-left both 1.2s 0.3s, appear both 1.2s 0.5s;
+	animation: move-up both 1.2s 0.3s, appear both 1.2s 0.5s;
 }
 h1, .info{
 	text-align: right;
 }
-
-
 h2{
 	text-align: center;
 	margin-bottom: 20px;
@@ -143,7 +142,7 @@ BENEFITS
 */
 
 .benefits{
-   animation: move-left both, appear both;
+   animation: move-right both, appear both;
    animation-timeline: view();
 	  animation-range-end: contain;
 }
@@ -151,14 +150,21 @@ BENEFITS
 	border: 2px solid var(--vermillion);
 	box-shadow: 4px 4px 10px #000, -4px -4px 10px #F2423644;
 	border-radius: 8px;
-	padding: 8px 20px;
-	display: flex;
-	flex-direction: column;
+	padding: 14px 16px;
 	margin: 0 auto;
 	margin-bottom: 20vh;
-	width: clamp(190px, 75%, 450px);
+	width: clamp(220px, 75%, 500px);
+	font-size: clamp(15px, 3.4vw, 20px);
+	max-height: 315px;
+}
+.benefits-section ul{
+	display: flex;
+	flex-direction: column;
+	gap: 1.8vw;
 	justify-content: space-evenly;
-	height: 
+}
+.benefits-section ul span{
+	font-weight: 500;
 }
 
 /*
@@ -233,13 +239,6 @@ QUERIES
 		padding: 4px 16px;
 	}
 }
-@media (min-width: 480px){
-	.skill-bar span{
-		display: block;
-	}
-}
-
-
 /*
 ANIMATIONS
 */
@@ -268,24 +267,19 @@ ANIMATIONS
 		transform: translateY(0);
 	}
 }
+@keyframes move-up{
+	0%{
+		transform: translateY(5vh);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
 @keyframes appear{
 	0%{
-		opacity: 0;
-	}
-	20%{
-	   opacity: 0.1;
-	}
-	40%{
-	   opacity: 0.4;
-	}
-	60%{
-	   opacity: 0.7;
+		opacity: 0.2;
 	}
 	100%{
 		opacity: 1;
 	}
 }
-
-/*
-linear-gradient(var(--platinum), var(--platinum)), linear-gradient(to bottom, #F2423699, transparent),
-*/
