@@ -15,16 +15,10 @@ body{
 	--black: #161514;
 	--transparent-black: #16151444;
 	--transparent-platinum: #DBDBDB44;
-	background-color: var(--black);
 	display: flex;
 	flex-direction: column;
+	background-color: var(--black);
 	width: 100%;
-	background-image: linear-gradient(var(--platinum), var(--platinum)), linear-gradient(to bottom, #F2423699, transparent), url('images/back.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-blend-mode: overlay;
-	background-position: center center;
 	overflow-x: hidden;
 }
 .space{
@@ -71,14 +65,14 @@ MAIN
 */
 
 main{
-	padding: 1vh 0 5vh 0;
+	padding: 1vh 0 6vh 0;
 	display: flex;
 	color: #FFF;
 	justify-content: space-between;
 	flex-direction: column;
-	margin: auto;
 	gap: 22vh;
-	width: clamp(100px, 88vw, 950px);
+	margin: auto;
+	width: clamp(120px, 88vw, 800px);
 }
 
 /*
@@ -114,20 +108,19 @@ h1{
 	font-weight: 800;
 	animation: move-down both 1.2s 0.3s, appear both 1.2s 0.5s;
 }
+h1, h2, .info{
+   filter: drop-shadow(0 0 4px #000);
+}
 .info{
 	grid-area: info;
-	font-size: clamp(15px, 2.8vw, 24px);
-	line-height: 1.35;
+	font-size: clamp(16px, 3.1vw, 24px);
+	line-height: 1.5;
 	animation: move-left both 1.2s 0.3s, appear both 1.2s 0.5s;
 }
 h1, .info{
 	text-align: right;
 }
 
-h1, h2, .info{
-	filter: drop-shadow(0 0 8px #F2423660);
-	color: #FFF;
-}
 
 h2{
 	text-align: center;
@@ -140,7 +133,7 @@ PROJECTS
 */
 
 .projects{
-	animation: move-left both, appear both;
+	animation: move-right both, appear both;
 	animation-timeline: view();
 	animation-range-end: contain;
 }
@@ -149,18 +142,23 @@ PROJECTS
 BENEFITS
 */
 
+.benefits{
+   animation: move-left both, appear both;
+   animation-timeline: view();
+	  animation-range-end: contain;
+}
 .benefits-section{
 	border: 2px solid var(--vermillion);
 	box-shadow: 4px 4px 10px #000, -4px -4px 10px #F2423644;
 	border-radius: 8px;
-	padding: 4px 10px;
+	padding: 8px 20px;
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
 	margin-bottom: 20vh;
 	width: clamp(190px, 75%, 450px);
-	height: clamp(140px, 33vw, 220px);
 	justify-content: space-evenly;
+	height: 
 }
 
 /*
@@ -168,7 +166,7 @@ CONTACT
 */
 
 .contact{
-	animation: move-right both, appear both;
+ animation: move-right both, appear both;
 	animation-timeline: view();
 	animation-range-end: contain;
 }
@@ -226,15 +224,13 @@ QUERIES
 		width: clamp(100px, 70vw, 950px);
 		gap: 36vh;
 		padding: 5vh 0 10vh 0;
+		background-image: url("horizontal-bg.jpg")
 	}
 	.skill-bar{
 		padding: 3px;
 	}
 	.contact-section{
 		padding: 4px 16px;
-	}
-	.info{
-		line-height: 1.5;
 	}
 }
 @media (min-width: 480px){
@@ -276,7 +272,20 @@ ANIMATIONS
 	0%{
 		opacity: 0;
 	}
+	20%{
+	   opacity: 0.1;
+	}
+	40%{
+	   opacity: 0.4;
+	}
+	60%{
+	   opacity: 0.7;
+	}
 	100%{
 		opacity: 1;
 	}
 }
+
+/*
+linear-gradient(var(--platinum), var(--platinum)), linear-gradient(to bottom, #F2423699, transparent),
+*/
