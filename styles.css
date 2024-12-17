@@ -1,3 +1,7 @@
+/*
+FALTA PASAR LAS IMÁGENES A WEBP Y CREAR LA SECCIÓN DE PROYECTOS
+*/
+
 :root{
 	color-scheme: light dark;
 }
@@ -37,7 +41,7 @@ NAV
 nav{
 	background-color: #E23226;
 	padding: 10px 0;
-	font-size: clamp(13px, 2.5vw, 17px);
+	font-size: clamp(14px, 2.5vw, 17px);
 	position: fixed;
 	width: 100vw;
 	z-index: 10;
@@ -75,7 +79,7 @@ main{
 	color: light-dark(var(--black), #FFF);
 	justify-content: space-between;
 	flex-direction: column;
-	gap: 12vw;
+	gap: 14vw;
 	margin: auto;
 	width: clamp(120px, 88vw, 800px);
 }
@@ -92,6 +96,7 @@ ABOUT-ME
 	                     "img h1"
 						 "img info";
 	gap: 6px;
+	margin-bottom: 20px;
 }
 .img-container{
 	width: clamp(80px, 30vw, 180px);
@@ -115,8 +120,8 @@ h1{
 }
 .info{
 	grid-area: info;
-	font-size: clamp(16px, 3.1vw, 24px);
-	line-height: 1.5;
+	font-size: clamp(16px, 3.2vw, 22px);
+	line-height: 1.55;
 	animation: move-up both 1.2s 0.3s, appear2 both 1.2s 0.5s;
 }
 h1, .info{
@@ -124,8 +129,10 @@ h1, .info{
 }
 h2{
 	text-align: center;
-	margin-bottom: 20px;
-	font-size: clamp(18px, 4.4vw, 40px);
+	font-size: clamp(19px, 4.8vw, 40px);
+}
+h2, .cta{
+	margin-bottom: 16px;
 }
 
 /*
@@ -169,13 +176,13 @@ BENEFITS
 	margin: 0 auto;
 	margin-bottom: 20vh;
 	width: clamp(220px, 75%, 500px);
-	font-size: clamp(15px, 3.4vw, 20px);
+	font-size: clamp(15px, 2.8vw, 19px);
 	max-height: 315px;
 }
 .benefits-section ul{
 	display: flex;
 	flex-direction: column;
-	gap: 1.8vw;
+	gap: 1.85vw;
 	justify-content: space-evenly;
 }
 .benefits-section ul span{
@@ -190,6 +197,16 @@ CONTACT
 	animation: move-right both, appear both;
 	animation-timeline: view();
 	animation-range-end: contain;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.cta{
+	text-align: center;
+	font-size: clamp(16px, 3vw, 19px);
+}
+.cta-text{
+	margin: 0 auto;
 }
 .contact-section{
 	border: 2px solid var(--vermillion);
@@ -236,16 +253,27 @@ CONTACT
 /*
 QUERIES
 */
-
+@media screen and (min-width: 470px){	
+	.type{
+		animation: typing 3.1s steps(40, end), blink .8s step-end infinite;
+	}
+	.cta{
+		white-space: nowrap;
+	}
+	.cta-text{
+		overflow: hidden;
+		margin: 0 auto;
+		border-right: 2px solid var(--vermillion);
+	}
+}
 @media screen and (min-width: 800px){
 	.about-me{
 		gap: 8px;
 	}
 	main{
 		width: clamp(100px, 70vw, 950px);
-		gap: 22vw;
+		gap: 12vw;
 		padding: 5vh 0 10vh 0;
-		background-image: url("horizontal-bg.jpg")
 	}
 	.skill-bar{
 		padding: 3px;
@@ -253,14 +281,31 @@ QUERIES
 	.contact-section{
 		padding: 4px 16px;
 	}
+	h2, .cta{
+		margin-bottom: 24px;
+	}
+	.benefits-section ul{
+		gap: 1.5vw;
+	}
 }
+
+/*
+FOOTER
+*/
+
+footer{
+	padding: 10px;
+	text-align: center;
+	font-size: clamp(13px, 3vw, 16px);
+}
+
 /*
 ANIMATIONS
 */
 
 @keyframes move-right{
 	0%{
-		transform: translateX(-7vw);
+		transform: translateX(-8vw);
 	}
 	100%{
 		transform: translateX(0);
@@ -268,7 +313,7 @@ ANIMATIONS
 }
 @keyframes move-left{
 	0%{
-		transform: translateX(7vw);
+		transform: translateX(8vw);
 	}
 	100%{
 		transform: translateX(0);
@@ -292,7 +337,7 @@ ANIMATIONS
 }
 @keyframes appear{
 	0%{
-		opacity: 0.5;
+		opacity: 0.25;
 	}
 	100%{
 		opacity: 1;
@@ -304,5 +349,21 @@ ANIMATIONS
 	}
 	100%{
 		opacity: 1;
+	}
+}
+@keyframes typing{
+	from{
+		width: 0;
+	}
+	to{
+		width: 100%;
+	}
+} 
+@keyframes blink{
+	0%, 100%{
+		border-color: transparent;
+	}
+	50%{
+		border-color: var(--vermillion);
 	}
 }
