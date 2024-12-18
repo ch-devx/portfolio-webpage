@@ -1,5 +1,5 @@
 /*
-FALTA PASAR LAS IMÁGENES A WEBP Y CREAR LA SECCIÓN DE PROYECTOS
+FALTA CREAR LA SECCIÓN DE PROYECTOS Y LOS FAVICONS
 */
 
 :root{
@@ -251,6 +251,16 @@ CONTACT
 }
 
 /*
+FOOTER
+*/
+
+footer{
+	padding: 10px;
+	text-align: center;
+	font-size: clamp(13px, 3vw, 16px);
+}
+
+/*
 QUERIES
 */
 @media screen and (min-width: 470px){	
@@ -287,16 +297,6 @@ QUERIES
 	.benefits-section ul{
 		gap: 1.5vw;
 	}
-}
-
-/*
-FOOTER
-*/
-
-footer{
-	padding: 10px;
-	text-align: center;
-	font-size: clamp(13px, 3vw, 16px);
 }
 
 /*
