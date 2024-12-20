@@ -1,5 +1,5 @@
 /*
-FALTA CREAR LA SECCIÓN DE PROYECTOS Y LOS FAVICONS
+FALTA CREAR LA SECCIÓN DE PROYECTOS, ARREGLAR LA SECCIÓN DE CONTACTO Y AÑADIR LOS FAVICONS
 */
 
 :root{
@@ -17,11 +17,7 @@ body{
 	font-family: "Roboto Condensed", "sans-serif";
 	--platinum: #DBDBDB;
 	--vermillion: #F24236;
-	--blue: #0F084B;
-	--gray: #565554;
 	--black: #161514;
-	--transparent-black: #16151444;
-	--transparent-platinum: #DBDBDB44;
 	display: flex;
 	flex-direction: column;
 	background-color: light-dark(var(--platinum), var(--black));
@@ -81,7 +77,7 @@ main{
 	flex-direction: column;
 	gap: 14vw;
 	margin: auto;
-	width: clamp(120px, 88vw, 800px);
+	width: clamp(120px, 88vw, 700px);
 }
 
 /*
@@ -123,6 +119,29 @@ h1{
 	font-size: clamp(16px, 3.2vw, 22px);
 	line-height: 1.55;
 	animation: move-up both 1.2s 0.3s, appear2 both 1.2s 0.5s;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.contact-button{
+	padding: 4px 5px;
+	border: 1px solid var(--vermillion);
+	border-radius: 16px;
+	text-decoration: none;
+	color: light-dark(var(--black), #FFF);
+	height: clamp(22px, 25%, 36px);
+	font-size: clamp(14px, 2.5vw, 18px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+	width: clamp(85px, 30%, 140px);
+	align-self: flex-end;
+}
+.contact-button:hover{
+	box-shadow: 2px 2px 10px light-dark(#0007, #000), -4px -4px 10px #F2423644;
+	background-color: var(--vermillion);
+	color: #FFF;
 }
 h1, .info{
 	text-align: right;
@@ -263,6 +282,7 @@ footer{
 /*
 QUERIES
 */
+
 @media screen and (min-width: 470px){	
 	.type{
 		animation: typing 3.1s steps(40, end), blink .8s step-end infinite;
@@ -278,10 +298,10 @@ QUERIES
 }
 @media screen and (min-width: 800px){
 	.about-me{
-		gap: 8px;
+		gap: 12px;
 	}
 	main{
-		width: clamp(100px, 70vw, 950px);
+		width: clamp(100px, 70vw, 900px);
 		gap: 12vw;
 		padding: 5vh 0 10vh 0;
 	}
