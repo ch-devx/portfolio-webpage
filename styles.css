@@ -47,6 +47,9 @@ li a{
 	text-decoration: none;
 	color: #FFF;
 }
+a{
+   cursor: pointer;
+}
 nav li{
 	text-align: center;
 	padding: 5px 10px;
@@ -91,7 +94,7 @@ ABOUT-ME
 	grid-template-areas: "space space"
 	                     "img h1"
 						 "img info";
-	gap: 6px;
+	gap: 10px;
 	margin-bottom: 20px;
 }
 .img-container{
@@ -166,7 +169,7 @@ PROJECTS
 
 .projects-section{
 	border: 2px solid var(--vermillion);
-	box-shadow: 4px 4px 10px light-dark(#000A, #000), -4px -4px 10px #F2423644;
+	box-shadow: 4px 4px 10px light-dark(#0008, #000), -4px -4px 10px #F2423644;
 	border-radius: 8px;
 	padding: 4px 10px;
 	display: flex;
@@ -189,7 +192,7 @@ BENEFITS
 }
 .benefits-section{
 	border: 2px solid var(--vermillion);
-	box-shadow: 4px 4px 10px light-dark(#000A, #000), -4px -4px 10px #F2423644;
+	box-shadow: 4px 4px 10px light-dark(#0008, #000), -4px -4px 10px #F2423644;
 	border-radius: 8px;
 	padding: 14px 16px;
 	margin: 0 auto;
@@ -229,43 +232,50 @@ CONTACT
 }
 .contact-section{
 	border: 2px solid var(--vermillion);
-	box-shadow: 4px 4px 10px light-dark(#000A, #000), -4px -4px 10px #F2423644;
+	box-shadow: 4px 4px 10px light-dark(#0008, #000), -4px -4px 10px #F2423644;
 	border-radius: 8px;
 	padding: 4px 10px;
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
 	margin-bottom: 20vh;
-	width: clamp(190px, 75%, 450px);
-	height: clamp(140px, 33vw, 220px);
+	width: clamp(260px, 65%, 315px);
+	height: clamp(120px, 28vw, 140px);
 	justify-content: space-evenly;
 }
-.contact-section a{
-	padding: 4px 5px;
+.contact-section a, .button, .email input{ 
 	border: 1px solid var(--vermillion);
 	border-radius: 16px;
 	text-decoration: none;
 	color: light-dark(var(--black), #FFF);
-	height: clamp(22px, 25%, 36px);
+	height: 30px;
 	font-size: clamp(14px, 2.5vw, 18px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 7px;
 	transition: 0.3s;
+	background-color: transparent;
 }
-.contact-section a:hover{
-	box-shadow: 2px 2px 10px light-dark(#0007, #000), -4px -4px 10px #F2423644;
-	background-color: var(--vermillion);
-	color: #FFF;
+.button{
+   padding: 8px;
 }
-.whatsapp{
-	width: clamp(16px, 6%, 26px);
+.buttons{
+   display: flex;
+   justify-content: space-around;
+   flex: 1;
+   gap: 3px;
 }
-.gmail{
-	width: clamp(13px, 5%, 26px);
+.email{
+   display: flex;
+   gap: 4px;
 }
-.linkedin{
+.email-input{
+   width: clamp(150px, 70%, 320px);
+   padding: 8px 10px;
+   flex: 2;
+   height: 30px;
+}
+.github{
 	width: clamp(15px, 6%, 24px);
 }
 
